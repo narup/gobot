@@ -1,24 +1,23 @@
+
+## Based on awesome tutorial by https://github.com/justforfunc
+
+## Deploy to Compute Engine Insrance
 ## Build linux binary
 ```bash
-GOOS=linux go build -o pulsenepal
+GOOS=linux go build -o gobot
 ```
 ## Copy to server 
 ```bash
-gcloud compute scp pulsenepal mailtopuran@botsgrid:~/
+gcloud compute scp gobot <computer_engine_user>@<host_name>:~/
 ```
 
 ## Enable Botsgrid Service 
 ```bash
-sudo mv botsgrid.service /etc/systemd/system
-sudo systemctl enable botsgrid
+sudo mv gobot.service /etc/systemd/system
+sudo systemctl enable gobot
 ```
 
 ```bash
-sudo systemctl status botsgrid
-sudo systemctl start botsgrid
-```
-
-## Web parser
-```bash
-curl -H "x-api-key: <API_KEY>" "https://mercury.postlight.com/parser?url=https://www.youtube.com/watch?v=yod7ygeIHNo"
+sudo systemctl status gobot
+sudo systemctl start gobot
 ```
