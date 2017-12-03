@@ -1,2 +1,4 @@
 twitter.env
 botsgrid.service
+vendor/
+Gopkg.lock
